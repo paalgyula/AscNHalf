@@ -1,12 +1,10 @@
 package hu.paalgyula.ascnhalf.client;
 
-import net.ascnhalf.commons.network.netty.model.PacketData;
 import org.jboss.netty.bootstrap.ClientBootstrap;
 import org.jboss.netty.buffer.BigEndianHeapChannelBuffer;
 import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.*;
 import org.jboss.netty.channel.socket.nio.NioClientSocketChannelFactory;
-import org.jboss.netty.util.internal.ByteBufferUtil;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
@@ -35,35 +33,21 @@ public class RealmClient extends SimpleChannelUpstreamHandler implements Runnabl
     private byte[] key;
     private PacketData data;
 
-    protected String serverPacketPath = "./conf/packetData/rl-packets.xml";
-    protected String serverXSDPath = "./conf/packetData/packets.xsd";
-
     public RealmClient(String host, int port, byte[] key) throws JAXBException {
         this.host = host;
         this.port = port;
         this.key = key;
 
-        Class clazz = PacketData.class;
-
         try {
-            JAXBContext jc = JAXBContext.newInstance(clazz);
+            JAXBContext jc = JAXBContext.newInstance(PacketData.class);
             Unmarshaller un = jc.createUnmarshaller();
 
             SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 
-            Schema schema = null;
-            try {
-                schema = sf.newSchema(new File(serverXSDPath));
-            } catch (SAXException e) {
-                System.err.println("Error getting schema");
-                e.printStackTrace();
-            }
-
-            un.setSchema(schema);
-            data = (PacketData)clazz.cast(un.unmarshal(new File(serverPacketPath)));
+            data = PacketData.class.cast(un.unmarshal(RealmClient.this.getClass().getResourceAsStream("/client_packets.xml")));
         } catch (JAXBException e) {
             System.err.println("Error while loading xml data for class: "
-                    + clazz.getCanonicalName());
+                    + PacketData.class.getCanonicalName());
             e.printStackTrace();
             throw e;
         }

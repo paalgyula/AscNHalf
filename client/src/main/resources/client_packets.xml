@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="client_packets.xsd">
+    <packet name="CMSG_PING"                            opcode="1DC" />
+    <packet name="CMSG_AUTH_SESSION"                    opcode="1ED"/>
+    <packet name="CMSG_READY_FOR_ACCOUNT_DATA_TIMES"    opcode="4FF" />
+    <packet name="CMSG_REALM_SPLIT"                     opcode="38C" />
+    <packet name="CMSG_CHAR_ENUM"                       opcode="37" />
+    <packet name="CMSG_PLAYER_LOGIN"                    opcode="3D" />
+    <packet name="CMSG_SET_ACTIVE_VOICE_CHANNEL"        opcode="3D3" />
+    <packet name="CMSG_CANCEL_TRADE"                    opcode="11C" />
+    <packet name="CMSG_WORLD_STATE_UI_TIMER_UPDATE"     opcode="4F6" />
+    <packet name="CMSG_PLAYED_TIME"                     opcode="1CC" />
+    <packet name="CMSG_NAME_QUERY"                      opcode="50" />
+    <packet name="CMSG_SET_ACTIONBAR_TOGGLES"           opcode="2BF" />
+    <packet name="CMSG_QUERY_TIME"                      opcode="1CE" />
+    <packet name="CMSG_QUERY_NEXT_MAIL_TIME"            opcode="284" />
+    <packet name="CMSG_LFG_GET_STATUS"                  opcode="296" />
+    <packet name="CMSG_VOICE_SESSION_ENABLE"            opcode="3AF" />
+    <packet name="CMSG_ZONEUPDATE"                      opcode="1F4" />
+    <packet name="CMSG_ITEM_QUERY_SINGLE"               opcode="56" />
+    <packet name="CMSG_TUTORIAL_FLAG"                   opcode="FE" />
+</packets>

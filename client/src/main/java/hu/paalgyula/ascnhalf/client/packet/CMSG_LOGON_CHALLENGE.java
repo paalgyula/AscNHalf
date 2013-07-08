@@ -1,16 +1,14 @@
 package hu.paalgyula.ascnhalf.client.packet;
 
-import net.ascnhalf.commons.network.handlers.ClientPacketHandler;
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.Channel;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Felhasználó
+ * User: paalgyula
  * Date: 2013.07.04.
  * Time: 12:56
- * To change this template use File | Settings | File Templates.
  */
 public class CMSG_LOGON_CHALLENGE extends ClientPacket {
 
