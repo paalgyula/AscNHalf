@@ -5,6 +5,18 @@
     <version>0.0.1-SNAPSHOT-12340</version>
 
     <name>AscNHalf WoW Emulator</name>
+
+    <developers>
+        <developer>
+            <id>hu.paalgyula.ascnhalf</id>
+            <name>World Of Warcraft Server emulator</name>
+            <email>paalgyula@gmail.com</email>
+            <url>http://paalgyula.github.io</url>
+            <organization>The AscNHalf Project</organization>
+            <organizationUrl>http://paalgyula.github.io/ascnhalf</organizationUrl>
+        </developer>
+    </developers>
+
     <scm>
         <url>https://github.com/paalgyula/ascnhalf</url>
         <connection>scm:git:git://github.com/paalgyula/ascnhalf.git</connection>
